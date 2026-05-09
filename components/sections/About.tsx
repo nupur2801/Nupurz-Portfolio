@@ -3,6 +3,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+const experience = {
+  company: "Ellecon Pvt Ltd",
+  location: "India",
+  period: "May 2023 - July 2023",
+  role: "Full Stack Developer Intern",
+  description: "Built full-stack web applications using the MERN stack. Developed real-time inventory updates and admin dashboard. Integrated RESTful APIs and improved UI/UX for better usability.",
+};
+
 export function About() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -17,7 +25,7 @@ export function About() {
           transition={{ duration: 0.5 }}
         >
           <span className="squiggle">About</span>
-          <span className="text-coral">.</span>
+          <span className="text-mint-deep">.</span>
         </motion.h2>
 
         <motion.div
@@ -28,10 +36,10 @@ export function About() {
         >
           <div className="flex items-center justify-center gap-4">
             <span className="text-2xl text-mint-soft">/</span>
-            <h3 className="font-script text-4xl md:text-5xl text-mint-deep relative">
+            <h3 className="font-script text-4xl md:text-5xl relative" style={{ color: "#3fa885" }}>
               education
               <svg className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-2" viewBox="0 0 100 10">
-                <path d="M5,5 Q25,2 50,5 T95,5" stroke="var(--mint-deep)" strokeWidth="2" fill="none" />
+                <path d="M5,5 Q25,2 50,5 T95,5" stroke="#3fa885" strokeWidth="2" fill="none" />
               </svg>
             </h3>
             <span className="text-2xl text-mint-soft">\</span>
@@ -41,7 +49,7 @@ export function About() {
         <div className="relative flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
           {/* Bachelor's Degree Card */}
           <motion.div
-            className="bg-cream rounded-2xl p-8 border-2 border-mint-soft shadow-md relative max-w-sm w-full"
+            className="bg-white rounded-2xl p-8 shadow-md relative max-w-sm w-full"
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -62,16 +70,17 @@ export function About() {
               </svg>
             </div>
             
-            <h3 className="text-xl font-bold text-mint-deep text-center mb-3 relative">
+            <h3 className="text-xl font-bold text-ink text-center mb-3 relative">
               Bachelor's Degree
               <svg className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-20 h-1" viewBox="0 0 60 6">
-                <path d="M5,3 Q15,1 30,3 T55,3" stroke="var(--mint-deep)" strokeWidth="1.5" fill="none" />
+                <path d="M5,3 Q15,1 30,3 T55,3" stroke="var(--ink)" strokeWidth="1.5" fill="none" />
               </svg>
             </h3>
             <p className="text-lg text-ink text-center mb-2">Computer Engineering</p>
-            <p className="text-ink-muted text-center mb-3">Gujarat Technological University</p>
+            <p className="text-ink-muted text-center mb-2">Gujarat Technological University, Gujarat, India</p>
+            <p className="text-center mb-3 font-medium" style={{ color: "#ff6b6b" }}>8.69 CGPA</p>
             <div className="flex justify-center">
-              <span className="bg-mustard-soft text-ink px-4 py-1 rounded-full text-sm font-medium">2019 - 2023</span>
+              <span className="px-4 py-1 rounded-full text-sm font-medium" style={{ backgroundColor: "#fdf6ea", color: "inherit" }}>2019 - 2023</span>
             </div>
             
             {/* Leaf decoration */}
@@ -102,7 +111,7 @@ export function About() {
 
           {/* Master's Degree Card */}
           <motion.div
-            className="bg-cream rounded-2xl p-8 border-2 border-mint-soft shadow-md relative max-w-sm w-full"
+            className="bg-white rounded-2xl p-8 shadow-md relative max-w-sm w-full"
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -123,16 +132,17 @@ export function About() {
               </svg>
             </div>
             
-            <h3 className="text-xl font-bold text-mint-deep text-center mb-3 relative">
+            <h3 className="text-xl font-bold text-ink text-center mb-3 relative">
               Master's Degree
               <svg className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-20 h-1" viewBox="0 0 60 6">
-                <path d="M5,3 Q15,1 30,3 T55,3" stroke="var(--mint-deep)" strokeWidth="1.5" fill="none" />
+                <path d="M5,3 Q15,1 30,3 T55,3" stroke="var(--ink)" strokeWidth="1.5" fill="none" />
               </svg>
             </h3>
             <p className="text-lg text-ink text-center mb-2">MS in Computer Science</p>
-            <p className="text-ink-muted text-center mb-3">Rowan University, New Jersey, USA</p>
+            <p className="text-ink-muted text-center mb-2">Rowan University, New Jersey, USA</p>
+            <p className="text-center mb-3 font-medium" style={{ color: "#ff6b6b" }}>3.55 GPA</p>
             <div className="flex justify-center">
-              <span className="bg-mustard-soft text-ink px-4 py-1 rounded-full text-sm font-medium">2024 - 2026</span>
+              <span className="px-4 py-1 rounded-full text-sm font-medium" style={{ backgroundColor: "#fdf6ea", color: "inherit" }}>2024 - 2026</span>
             </div>
             
             {/* Leaf decoration */}
@@ -144,7 +154,93 @@ export function About() {
           </motion.div>
         </div>
 
-        {/* Decorative Elements */}
+        {/* Download Resume Button */}
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
+          <a
+            href="/resume.docx"
+            download
+            className="inline-flex items-center gap-3 border-2 px-8 py-4 rounded-full font-display text-lg font-medium text-white hover:bg-[#2a7a5d] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl" style={{ backgroundColor: "#3fa885", borderColor: "#3fa885" }}
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l10.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd"/>
+            </svg>
+            Download Resume
+          </a>
+        </motion.div>
+
+        {/* Experience Section */}
+        <motion.div
+          className="mt-20"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-4">
+              <span className="text-2xl text-mint-soft">/</span>
+              <h3 className="font-script text-4xl md:text-5xl relative" style={{ color: "#3fa885" }}>
+                experience
+                <svg className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-2" viewBox="0 0 100 10">
+                  <path d="M5,5 Q25,2 50,5 T95,5" stroke="#3fa885" strokeWidth="2" fill="none" />
+                </svg>
+              </h3>
+              <span className="text-2xl text-mint-soft">\</span>
+            </div>
+          </div>
+
+          {/* Single Horizontal Experience Card */}
+          <motion.div
+            className="max-w-4xl mx-auto"
+            initial={{ opacity: 0, x: -50 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ delay: 0.6, duration: 0.6 }}
+          >
+            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex flex-col md:flex-row gap-8">
+                {/* Left Side - Icon and Date */}
+                <div className="flex flex-col items-center md:items-start space-y-6">
+                  <div className="w-20 h-20 bg-mint-soft rounded-full flex items-center justify-center">
+                    <svg className="w-10 h-10 text-mint-deep" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1z" clipRule="evenodd"/>
+                    </svg>
+                  </div>
+                  <div className="text-center md:text-left">
+                    <p className="text-sm font-semibold text-ink">{experience.period}</p>
+                    <p className="text-xs text-ink-muted">{experience.location}</p>
+                  </div>
+                </div>
+
+                {/* Right Side - Content */}
+                <div className="flex-1">
+                  <div className="mb-6">
+                    <h4 className="font-display text-2xl font-bold text-ink mb-3">
+                      {experience.role}
+                    </h4>
+                    <p className="text-xl font-medium mb-6" style={{ color: "#ff6b6b" }}>{experience.company}</p>
+                  </div>
+                  
+                  <p className="text-ink leading-relaxed mb-8 text-lg">
+                    {experience.description}
+                  </p>
+
+                  {/* Keywords/Tags */}
+                  <div className="flex flex-wrap gap-3">
+                    <span className="px-4 py-2 rounded-full text-sm font-medium" style={{ backgroundColor: "#fdf6ea", color: "inherit" }}>MERN Stack</span>
+                    <span className="px-4 py-2 rounded-full text-sm font-medium" style={{ backgroundColor: "#fdf6ea", color: "inherit" }}>RESTful APIs</span>
+                    <span className="px-4 py-2 rounded-full text-sm font-medium" style={{ backgroundColor: "#fdf6ea", color: "inherit" }}>UI/UX</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+{/* Decorative Elements */}
         <motion.div
           className="absolute top-20 left-10 text-mint-soft opacity-60"
           initial={{ opacity: 0, scale: 0 }}
@@ -157,24 +253,13 @@ export function About() {
         </motion.div>
 
         <motion.div
-          className="absolute top-32 right-10 text-coral-soft opacity-60"
+          className="absolute top-32 right-10 text-mint-soft opacity-60"
           initial={{ opacity: 0, scale: 0 }}
           animate={inView ? { opacity: 0.6, scale: 1 } : {}}
           transition={{ delay: 0.7, duration: 0.4 }}
         >
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-          </svg>
-        </motion.div>
-
-        <motion.div
-          className="absolute bottom-20 left-20 text-mustard-soft opacity-60"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={inView ? { opacity: 0.6, scale: 1 } : {}}
-          transition={{ delay: 0.8, duration: 0.4 }}
-        >
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clipRule="evenodd"/>
           </svg>
         </motion.div>
       </div>

@@ -26,13 +26,25 @@ const knowledgeBase = {
       years: "2024 - 2026"
     }
   },
+  experience: {
+    internship: {
+      company: "Ellecon Pvt Ltd",
+      role: "Full Stack Developer Intern",
+      location: "India",
+      period: "May 2023 - July 2023",
+      description: "Built full-stack web applications using the MERN stack. Developed real-time inventory updates and admin dashboard. Integrated RESTful APIs and improved UI/UX for better usability."
+    }
+  },
   skills: [
     "Full Stack Development",
+    "MERN Stack (MongoDB, Express, React, Node.js)",
+    "RESTful API Development",
+    "UI/UX Design",
     "Cloud Computing",
     "Machine Learning",
     "Cybersecurity",
-    "API Development",
-    "Infrastructure Management"
+    "Infrastructure Management",
+    "Real-time Applications"
   ],
   interests: [
     "Intelligent Systems",
@@ -42,7 +54,7 @@ const knowledgeBase = {
     "Threat Modeling",
     "Cybersecurity"
   ],
-  background: "I'm a full stack developer and cloud-minded engineer who enjoys stitching together frontends, APIs, and the infrastructure that keeps them honest. My foundation is in computer engineering, sharpened with a master's in computer science."
+  background: "I'm a full stack developer and cloud-minded engineer who enjoys stitching together frontends, APIs, and the infrastructure that keeps them honest. My foundation is in computer engineering, sharpened with a master's in computer science. I have hands-on experience building full-stack applications with the MERN stack."
 };
 
 export function Chatbot() {
@@ -50,7 +62,7 @@ export function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "Hi! I'm Nupur's AI assistant. Ask me anything about Nupur's education, skills, or background! 👋",
+      text: "Hi! I'm Nupur's AI assistant. Ask me anything about Nupur's education, skills, experience, or background! 👋",
       sender: "bot",
       timestamp: new Date()
     }
@@ -83,7 +95,13 @@ export function Chatbot() {
 
     // Skills related queries
     if (lowerMessage.includes("skill") || lowerMessage.includes("expertise") || lowerMessage.includes("technology")) {
-      return `Nupur's skills include Full Stack Development, Cloud Computing, Machine Learning, Cybersecurity, API Development, and Infrastructure Management. 💻`;
+      if (lowerMessage.includes("mern") || lowerMessage.includes("stack")) {
+        return `Nupur has hands-on experience with the MERN stack (MongoDB, Express, React, Node.js) from her internship at Ellecon Pvt Ltd. She also specializes in Full Stack Development, RESTful APIs, and UI/UX design. 💻`;
+      } else if (lowerMessage.includes("api") || lowerMessage.includes("backend")) {
+        return `Nupur has experience with RESTful API development and full stack development. She integrated APIs during her internship at Ellecon Pvt Ltd and has skills in Cloud Computing and Infrastructure Management. 🔧`;
+      } else {
+        return `Nupur's skills include Full Stack Development, MERN Stack (MongoDB, Express, React, Node.js), RESTful API Development, UI/UX Design, Cloud Computing, Machine Learning, Cybersecurity, and Infrastructure Management. 💻`;
+      }
     }
 
     // Background/About queries
@@ -102,8 +120,16 @@ export function Chatbot() {
     }
 
     // Experience queries
-    if (lowerMessage.includes("experience") || lowerMessage.includes("work") || lowerMessage.includes("job")) {
-      return `Nupur is a full stack developer and cloud-minded engineer with experience in stitching together frontends, APIs, and infrastructure. She's particularly focused on intelligent systems and practical ML applications. 💼`;
+    if (lowerMessage.includes("experience") || lowerMessage.includes("work") || lowerMessage.includes("job") || lowerMessage.includes("internship")) {
+      if (lowerMessage.includes("internship") || lowerMessage.includes("ellecon")) {
+        return `Nupur worked as a Full Stack Developer Intern at Ellecon Pvt Ltd in India from May 2023 to July 2023. She built full-stack web applications using the MERN stack, developed real-time inventory updates and admin dashboard, integrated RESTful APIs, and improved UI/UX for better usability. 💼`;
+      } else if (lowerMessage.includes("mern") || lowerMessage.includes("stack")) {
+        return `Nupur has hands-on experience with the MERN stack (MongoDB, Express, React, Node.js) from her internship at Ellecon Pvt Ltd. She built full-stack applications and developed real-time features. 🚀`;
+      } else if (lowerMessage.includes("project") || lowerMessage.includes("built")) {
+        return `During her internship at Ellecon Pvt Ltd, Nupur built full-stack web applications, developed real-time inventory updates, created an admin dashboard, and integrated RESTful APIs. She also improved the UI/UX for better usability. 🛠️`;
+      } else {
+        return `Nupur has experience as a Full Stack Developer Intern at Ellecon Pvt Ltd (May-July 2023) where she worked with the MERN stack, built real-time applications, and developed RESTful APIs. She's a full stack developer and cloud-minded engineer focused on intelligent systems and practical ML applications. 💼`;
+      }
     }
 
     // Name queries
@@ -113,10 +139,10 @@ export function Chatbot() {
 
     // Default response
     const defaultResponses = [
-      "That's interesting! You can ask me about Nupur's education, skills, or background.",
-      "I can tell you about Nupur's technical skills and educational journey. What would you like to know?",
-      "Feel free to ask about Nupur's experience in full stack development, cloud computing, or ML!",
-      "I'm here to help you learn more about Nupur. Try asking about her education or technical interests!"
+      "That's interesting! You can ask me about Nupur's education, skills, experience, or background.",
+      "I can tell you about Nupur's internship at Ellecon Pvt Ltd, her MERN stack experience, or her educational journey. What would you like to know?",
+      "Feel free to ask about Nupur's experience in full stack development, MERN stack projects, or her technical skills!",
+      "I'm here to help you learn more about Nupur. Try asking about her internship, education, or technical interests!"
     ];
 
     return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];

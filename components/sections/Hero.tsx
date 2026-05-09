@@ -56,11 +56,11 @@ export function Hero() {
               I love building{" "}
               <span className="font-display text-outline">interactive</span>
               , real-world applications. I work with{" "}
-              <span className="font-display text-outline">MERN</span>,
-              experiment with{" "}
+              <span className="font-display text-outline">MERN</span>
+              , experiment with{" "}
               <span className="font-display text-outline">AI &amp; LLMs</span>
               , and deploy on{" "}
-              <span className="font-display text-outline">Azure</span>{" "}
+              <span className="font-display text-outline">Azure/AWS</span>{" "}
               cloud.
             </motion.h1>
           </div>
